@@ -1,6 +1,5 @@
 ﻿using Infrastructure.Entities;
 using Microsoft.EntityFrameworkCore;
-using Tmtu.Mvc.Models;
 
 namespace Infrastructure.ApplicationDbContext;
 

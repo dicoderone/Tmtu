@@ -12,10 +12,7 @@ public static class DependencyInjection
         this IServiceCollection services,
         string connectionString)
     {
-        services.AddDbContext<AppDbContext>(options =>
-            options.UseNpgsql(connectionString));
 
-        services.AddScoped<IContactService, ContactService>();
         services.AddScoped<INewsService, NewsService>();
 
         return services;
