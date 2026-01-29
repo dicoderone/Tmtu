@@ -1,0 +1,266 @@
+/* ============================================
+   PAGE STYLES
+   ============================================ */
+
+/* Page Header */
+.page-header {
+    background: linear-gradient(135deg, var(--railway-blue) 0%, var(--railway-blue-light) 100%);
+    color: white;
+    padding: 60px 0 40px;
+    margin-top: 0;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.breadcrumb a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.breadcrumb a:hover {
+    color: white;
+}
+
+.breadcrumb span {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.page-title {
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 12px;
+    line-height: 1.2;
+}
+
+.page-subtitle {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+}
+
+/* Page Content */
+.page-content {
+    padding: 60px 0;
+    background-color: var(--background);
+}
+
+.content-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.content-main {
+    background-color: white;
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: var(--shadow-md);
+}
+
+.content-section {
+    margin-bottom: 40px;
+}
+
+.content-section:last-child {
+    margin-bottom: 0;
+}
+
+.content-section h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--railway-blue);
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--border);
+}
+
+.content-section h3 {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--foreground);
+    margin-bottom: 12px;
+    margin-top: 24px;
+}
+
+.content-section p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--muted-foreground);
+    margin-bottom: 16px;
+}
+
+/* Timeline */
+.timeline {
+    position: relative;
+    padding-left: 40px;
+    margin-top: 30px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--border);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+    padding-left: 30px;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -25px;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--railway-blue);
+    border: 4px solid white;
+    box-shadow: 0 0 0 2px var(--railway-blue);
+}
+
+.timeline-year {
+    display: inline-block;
+    background: var(--railway-gold);
+    color: var(--railway-blue-dark);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.timeline-content h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--railway-blue);
+    margin-bottom: 8px;
+    margin-top: 0;
+}
+
+.timeline-content p {
+    color: var(--muted-foreground);
+    margin-bottom: 0;
+}
+
+/* Cards Grid */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 30px;
+}
+
+.info-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    transition: all var(--transition-normal);
+}
+
+.info-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+}
+
+.info-card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--railway-blue);
+    margin-bottom: 12px;
+    margin-top: 0;
+}
+
+.info-card p {
+    color: var(--muted-foreground);
+    margin-bottom: 0;
+}
+
+/* Table Styles */
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.info-table th,
+.info-table td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+
+.info-table th {
+    background-color: var(--muted);
+    color: var(--railway-blue);
+    font-weight: 600;
+}
+
+.info-table tr:hover {
+    background-color: var(--muted);
+}
+
+/* List Styles */
+.info-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.info-list li {
+    padding: 12px 0;
+    padding-left: 32px;
+    position: relative;
+    color: var(--muted-foreground);
+    line-height: 1.6;
+}
+
+.info-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--railway-gold);
+    font-weight: 700;
+    font-size: 18px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 32px;
+    }
+
+    .page-subtitle {
+        font-size: 16px;
+    }
+
+    .content-main {
+        padding: 24px;
+    }
+
+    .content-section h2 {
+        font-size: 24px;
+    }
+
+    .timeline {
+        padding-left: 30px;
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+}

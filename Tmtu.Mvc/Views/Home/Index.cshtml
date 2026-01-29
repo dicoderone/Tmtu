@@ -1,8 +1,1035 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termiz Mintaqaviy Temir Yo'l Uzeli</title>
+    <meta name="description" content="Termiz MTU - Surxondaryo viloyatining transport quvvati. Yo'lovchi va yuk tashish xizmatlari.">
+ 
+    <link href="~/css/site.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="top-bar-left">
+                    <a href="tel:+998762251234" class="top-bar-item">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                        </svg>
+                        <span>+998 76 225 12 34</span>
+                    </a>
+                    <a href="mailto:info@termizmtu.uz" class="top-bar-item">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                            <polyline points="22,6 12,13 2,6" />
+                        </svg>
+                        <span>info@termizmtu.uz</span>
+                    </a>
+                </div>
+                <div class="top-bar-right">
+                    <span class="top-bar-item">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <polyline points="12 6 12 12 16 14" />
+                        </svg>
+                        <span>Dush-Jum: 9:00 - 18:00</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">
+                    <div class="logo-icon">
+                        <svg viewBox="0 0 40 40" fill="none">
+                            <rect width="40" height="40" rx="8" fill="currentColor" />
+                            <path d="M10 28h20M12 20h16M14 12h12" stroke="white" stroke-width="3" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <div class="logo-text">
+                        <span class="logo-title">Termiz MTU</span>
+                        <span class="logo-subtitle">Mintaqaviy temir yo'l uzeli</span>
+                    </div>
+                </a>
+
+                <nav class="nav" id="nav">
+                    <a asp-action="index" class="nav-link">bosh sahifa</a>
+
+                    <div class="nav-dropdown dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            biz haqimizda
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a asp-controller="home" asp-action="mtutarixi" class="dropdown-item">mtu tarixi</a></li>
+                            <li><a asp-controller="home" asp-action="funksiyavavazifalar" class="dropdown-item">funksiya va vazifalar</a></li>
+                            <li><a asp-controller="home" asp-action="rahbariyat" class="dropdown-item">rahbariyat</a></li>
+                            <li><a asp-controller="home" asp-action="mamuriytuzilish" class="dropdown-item">ma'muriy tuzilish</a></li>
+                            <li><a asp-controller="home" asp-action="korxonavatashkilotlar" class="dropdown-item">korxona va tashkilotlar</a></li>
+                            <li><a asp-controller="home" asp-action="stansiyalar" class="dropdown-item">stansiyalar</a></li>
+                            <li><a asp-controller="home" asp-action="tarkibiybolinmalar" class="dropdown-item">tarkibiy bo'linmalar</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="nav-dropdown dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            xizmatlar
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a asp-controller="home" asp-action="temiryolstansiyalarixizmatlari" class="dropdown-item">temir yo'l stansiyalari xizmatlari</a></li>
+                            <li><a asp-controller="home" asp-action="temiryoltamirlashkorxonalari xizmatlari" class="dropdown-item">temir yo'l ta'mirlash korxonalari xizmatlari</a></li>
+                            <li><a asp-controller="home" asp-action="aloqavaishoraatmuassasasixizmatlari" class="dropdown-item">aloqa va ishoraat muassasasi xizmatlari</a></li>
+                            <li><a asp-controller="home" asp-action="elektrtaminotkorxonasi xizmatlari" class="dropdown-item">elektr ta'minot korxonasi xizmatlari</a></li>
+                            <li><a asp-controller="home" asp-action="lokomotivdepokorxonasi xizmatlari" class="dropdown-item">lokomotiv depo korxonasi xizmatlari</a></li>
+                            <li><a asp-controller="home" asp-action="vagondepokorxonasi xizmatlari" class="dropdown-item">vagon depo korxonasi xizmatlari</a></li>
+                            <li><a asp-controller="home" asp-action="oztemiryolhisobfilialixizmatlari" class="dropdown-item">o'ztemiryo'lhisob filiali xizmatlari</a></li>
+                            <li><a asp-controller="home" asp-action="yordamchixojaliklarxizmatlari" class="dropdown-item">yordamchi xo'jaliklar xizmatlari</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="nav-dropdown dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            interfaol xizmatlar
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a asp-controller="home" asp-action="test" class="dropdown-item">korxona fotosuratlari</a></li>
+                            <li><a asp-controller="home" asp-action="murojaatyuborish" class="dropdown-item">murojaat yuborish</a></li>
+                            <li><a asp-controller="home" asp-action="teztezberiladigansavollar" class="dropdown-item">tez-tez beriladigan savollar</a></li>
+                            <li><a asp-controller="home" asp-action="ochiqmalumotlar" class="dropdown-item">ochiq ma'lumotlar</a></li>
+                            <li><a asp-controller="home" asp-action="tenderlar" class="dropdown-item">tenderlar</a></li>
+                        </ul>
+                    </div>
+
+                    <a href="#news" class="nav-link">yangiliklar</a>
+                    <a href="#contact" class="nav-link">aloqa</a>
+                </nav>
+
+                <a href="#contact" class="btn btn-primary header-btn">
+                    Bog'lanish
+                </a>
+
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <nav class="mobile-nav">
+            <a asp-action="Index" class="mobile-nav-link">Bosh sahifa</a>
+            <div class="mobile-dropdown">
+                <a href="#" class="mobile-nav-link mobile-dropdown-toggle">Biz haqimizda</a>
+                <div class="mobile-dropdown-menu">
+                    <a href="pages/biz-haqimizda/mtu-tarixi.html" class="mobile-dropdown-item">MTU tarixi</a>
+                    <a href="pages/biz-haqimizda/funksiya-va-vazifalar.html" class="mobile-dropdown-item">Funksiya va vazifalar</a>
+                    <a href="pages/biz-haqimizda/rahbariyat.html" class="mobile-dropdown-item">Rahbariyat</a>
+                    <a href="pages/biz-haqimizda/mamuriy-tuzilish.html" class="mobile-dropdown-item">Ma'muriy tuzilish</a>
+                    <a href="pages/biz-haqimizda/korxona-va-tashkilotlar.html" class="mobile-dropdown-item">Korxona va tashkilotlar</a>
+                    <a href="pages/biz-haqimizda/stansiyalar.html" class="mobile-dropdown-item">Stansiyalar</a>
+                    <a href="pages/biz-haqimizda/tarkibiy-bolinmalar.html" class="mobile-dropdown-item">Tarkibiy bo'linmalar</a>
+                </div>
+            </div>
+            <div class="mobile-dropdown">
+                <a href="#" class="mobile-nav-link mobile-dropdown-toggle">Xizmatlar</a>
+                <div class="mobile-dropdown-menu">
+                    <a href="pages/xizmatlar/temir-yol-stansiyalari-xizmatlari.html" class="mobile-dropdown-item">Temir yo'l stansiyalari xizmatlari</a>
+                    <a href="pages/xizmatlar/temir-yol-tamirlash-korxonalari-xizmatlari.html" class="mobile-dropdown-item">Temir yo'l ta'mirlash korxonalari xizmatlari</a>
+                    <a href="pages/xizmatlar/aloqa-va-ishoraat-muassasasi-xizmatlari.html" class="mobile-dropdown-item">Aloqa va ishoraat muassasasi xizmatlari</a>
+                    <a href="pages/xizmatlar/elektr-taminot-korxonasi-xizmatlari.html" class="mobile-dropdown-item">Elektr ta'minot korxonasi xizmatlari</a>
+                    <a href="pages/xizmatlar/lokomotiv-depo-korxonasi-xizmatlari.html" class="mobile-dropdown-item">Lokomotiv depo korxonasi xizmatlari</a>
+                    <a href="pages/xizmatlar/vagon-depo-korxonasi-xizmatlari.html" class="mobile-dropdown-item">Vagon depo korxonasi xizmatlari</a>
+                    <a href="pages/xizmatlar/oztemiryolhisob-filiali-xizmatlari.html" class="mobile-dropdown-item">O'ztemiryo'lhisob filiali xizmatlari</a>
+                    <a href="pages/xizmatlar/yordamchi-xojaliklar-xizmatlari.html" class="mobile-dropdown-item">Yordamchi xo'jaliklar tomonidan ko'rsatiladigan xizmatlar</a>
+                </div>
+            </div>
+            <div class="mobile-dropdown">
+                <a href="#" class="mobile-nav-link mobile-dropdown-toggle">Interfaol xizmatlar</a>
+                <div class="mobile-dropdown-menu">
+                    <a href="pages/interfaol-xizmatlar/korxona-fotosuratlari.html" class="mobile-dropdown-item">Korxona fotosuratlari</a>
+                    <a href="pages/interfaol-xizmatlar/murojaat-yuborish.html" class="mobile-dropdown-item">Murojaat yuborish</a>
+                    <a href="pages/interfaol-xizmatlar/tez-tez-beriladigan-savollar.html" class="mobile-dropdown-item">Tez tez beriladigan savollar</a>
+                    <a href="pages/interfaol-xizmatlar/ochiq-malumotlar.html" class="mobile-dropdown-item">Ochiq ma'lumotlar</a>
+                    <a href="pages/interfaol-xizmatlar/tenderlar.html" class="mobile-dropdown-item">Tenderlar</a>
+                </div>
+            </div>
+            <a href="#news" class="mobile-nav-link">Yangiliklar</a>
+            <a href="#contact" class="mobile-nav-link">Aloqa</a>
+        </nav>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <div class="hero-slider">
+                <div class="hero-slide active" style="background-image: url('images/hero-railway.jpg');">
+                    <div class="hero-overlay"></div>
+                    <div class="container">
+                        <div class="hero-content">
+                            <div class="hero-badge">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <path d="M12 6v6l4 2" />
+                                </svg>
+                                <span>1991-yildan beri xizmatda</span>
+                            </div>
+                            <h1 class="hero-title">Termiz Mintaqaviy <span>Temir Yo'l Uzeli</span></h1>
+                            <p class="hero-description">Surxondaryo viloyatining transport quvvati. Yo'lovchilar va yuklarni xavfsiz, tez va qulay tashishni ta'minlaymiz.</p>
+                            <div class="hero-buttons">
+                                <a href="#services" class="btn btn-gold">
+                                    Xizmatlarimiz
+                                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M5 12h14M12 5l7 7-7 7" />
+                                    </svg>
+                                </a>
+                                <a href="#contact" class="btn btn-outline-white">           
+                                    Bog'lanish
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-slide" style="background-image: url('images/hero-station.jpg');">
+                    <div class="hero-overlay"></div>
+                    <div class="container">
+                        <div class="hero-content">
+                            <div class="hero-badge">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>
+                                <span>Strategik joylashuv</span>
+                            </div>
+                            <h1 class="hero-title">Zamonaviy <span>Infratuzilma</span></h1>
+                            <p class="hero-description">Eng yangi texnologiyalar va zamonaviy poyezdlar bilan xizmat ko'rsatamiz. Xavfsizlik va qulaylik bizning ustuvor yo'nalishimiz.</p>
+                            <div class="hero-buttons">
+                                <a href="#about" class="btn btn-gold">
+                                    Batafsil
+                                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M5 12h14M12 5l7 7-7 7" />
+                                    </svg>
+                                </a>
+                                <a href="#news" class="btn btn-outline-white">
+                                    Yangiliklar
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-slide" style="background-image: url('images/hero-railway-2.jpg');">
+                    <div class="hero-overlay"></div>
+                    <div class="container">
+                        <div class="hero-content">
+                            <div class="hero-badge">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="1" y="3" width="15" height="13" />
+                                    <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
+                                    <circle cx="5.5" cy="18.5" r="2.5" />
+                                    <circle cx="18.5" cy="18.5" r="2.5" />
+                                </svg>
+                                <span>Yuk tashish</span>
+                            </div>
+                            <h1 class="hero-title">Ishonchli <span>Yuk Tashish</span></h1>
+                            <p class="hero-description">Har xil turdagi yuklarni xavfsiz va tezkor yetkazib berish. Biznesingiz uchun ishonchli hamkor.</p>
+                            <div class="hero-buttons">
+                                <a href="#services" class="btn btn-gold">
+                                    Xizmatlar
+                                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M5 12h14M12 5l7 7-7 7" />
+                                    </svg>
+                                </a>
+                                <a href="#about" class="btn btn-outline-white">
+                                    Batafsil
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-slide" style="background-image: url('images/hero-railway-3.jpg');">
+                    <div class="hero-overlay"></div>
+                    <div class="container">
+                        <div class="hero-content">
+                            <div class="hero-badge">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                                </svg>
+                                <span>Xavfsizlik</span>
+                            </div>
+                            <h1 class="hero-title">Xavfsiz <span>Sayohat</span></h1>
+                            <p class="hero-description">Eng yuqori xavfsizlik standartlariga rioya qilamiz. Har bir yo'lovchi va yuk uchun kafolatli xavfsizlik.</p>
+                            <div class="hero-buttons">
+                                <a href="#about" class="btn btn-gold">
+                                    Batafsil
+                                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M5 12h14M12 5l7 7-7 7" />
+                                    </svg>
+                                </a>
+                                <a href="#news" class="btn btn-outline-white">
+                                    Yangiliklar
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slider Navigation -->
+            <div class="hero-nav">
+                <button class="hero-nav-btn active" data-slide="0">1</button>
+                <button class="hero-nav-btn" data-slide="1">2</button>
+                <button class="hero-nav-btn" data-slide="2">3</button>
+                <button class="hero-nav-btn" data-slide="3">4</button>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon blue">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" />
+                                <line x1="4" y1="22" x2="4" y2="15" />
+                            </svg>
+                        </div>
+                        <div class="stat-number" data-target="32">0</div>
+                        <div class="stat-label">Kunlik poyezdlar</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon gold">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
+                        </div>
+                        <div class="stat-number" data-target="12">0</div>
+                        <div class="stat-label">Stansiyalar</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon blue">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                <circle cx="9" cy="7" r="4" />
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                            </svg>
+                        </div>
+                        <div class="stat-number" data-target="850">0</div>
+                        <div class="stat-label">Xodimlar</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon gold">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                                <line x1="16" y1="2" x2="16" y2="6" />
+                                <line x1="8" y1="2" x2="8" y2="6" />
+                                <line x1="3" y1="10" x2="21" y2="10" />
+                            </svg>
+                        </div>
+                        <div class="stat-number" data-target="33">0</div>
+                        <div class="stat-label">Yillik tajriba</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-content">
+                        <div class="section-badge blue">
+                            <span>Biz haqimizda</span>
+                        </div>
+                        <h2 class="section-title">Surxondaryo viloyatining <span>transport quvvati</span></h2>
+                        <p class="section-description">
+                            Termiz mintaqaviy temir yo'l uzeli — O'zbekistonning janubiy chegarasida
+                            joylashgan strategik muhim transport markazidir. Biz yo'lovchilar va
+                            yuklarni xavfsiz, tez va qulay tashishni ta'minlaymiz.
+                        </p>
+                        <div class="features-grid">
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                        <polyline points="22 4 12 14.01 9 11.01" />
+                                    </svg>
+                                </div>
+                                <span>Zamonaviy poyezdlar parki</span>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                        <polyline points="22 4 12 14.01 9 11.01" />
+                                    </svg>
+                                </div>
+                                <span>Xavfsizlik standartlariga rioya</span>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                        <polyline points="22 4 12 14.01 9 11.01" />
+                                    </svg>
+                                </div>
+                                <span>24/7 mijozlarni qo'llab-quvvatlash</span>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                        <polyline points="22 4 12 14.01 9 11.01" />
+                                    </svg>
+                                </div>
+                                <span>Qulay narxlar siyosati</span>
+                            </div>
+                        </div>
+                        <a href="#services" class="btn btn-primary">
+                            Batafsil ma'lumot
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="about-visual">
+                        <div class="about-card">
+                            <div class="about-image">
+                                <div class="about-image-content">
+                                    <div class="about-icon">
+                                        <svg viewBox="0 0 100 100">
+                                            <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="2" />
+                                            <path d="M30 50 L50 30 L70 50 L50 70 Z" fill="currentColor" />
+                                        </svg>
+                                    </div>
+                                    <h3>1991-yildan beri</h3>
+                                    <p>Professional xizmat ko'rsatamiz</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="about-decoration-1"></div>
+                        <div class="about-decoration-2"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="services">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-badge gold">
+                        <span>Xizmatlar</span>
+                    </div>
+                    <h2 class="section-title center">Bizning <span>xizmatlarimiz</span></h2>
+                    <p class="section-subtitle">Yo'lovchilar va biznes uchun keng ko'lamli temir yo'l xizmatlari</p>
+                </div>
+
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon blue">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" />
+                                <line x1="4" y1="22" x2="4" y2="15" />
+                            </svg>
+                        </div>
+                        <h3 class="service-title">Yo'lovchi tashish</h3>
+                        <p class="service-description">Qulay va xavfsiz yo'lovchi poyezdlari orqali mintaqalar aro sayohat.</p>
+                        <a href="#" class="service-link">
+                            Batafsil
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon gold">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="1" y="3" width="15" height="13" />
+                                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
+                                <circle cx="5.5" cy="18.5" r="2.5" />
+                                <circle cx="18.5" cy="18.5" r="2.5" />
+                            </svg>
+                        </div>
+                        <h3 class="service-title">Yuk tashish</h3>
+                        <p class="service-description">Har xil turdagi yuklarni ishonchli va tezkor yetkazib berish xizmati.</p>
+                        <a href="#" class="service-link">
+                            Batafsil
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon sky">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+                            </svg>
+                        </div>
+                        <h3 class="service-title">Online chipta</h3>
+                        <p class="service-description">Onlayn tizim orqali chipta bron qilish va sotib olish imkoniyati.</p>
+                        <a href="#" class="service-link">
+                            Batafsil
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon light-blue">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                <circle cx="9" cy="7" r="4" />
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                            </svg>
+                        </div>
+                        <h3 class="service-title">Guruh sayohati</h3>
+                        <p class="service-description">Guruhlar uchun maxsus chegirmalar va qulay yo'nalishlar.</p>
+                        <a href="#" class="service-link">
+                            Batafsil
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon dark-gold">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                            </svg>
+                        </div>
+                        <h3 class="service-title">Xavfsizlik</h3>
+                        <p class="service-description">Eng yuqori xavfsizlik standartlariga muvofiq xizmat ko'rsatish.</p>
+                        <a href="#" class="service-link">
+                            Batafsil
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon dark-blue">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <polyline points="12 6 12 12 16 14" />
+                            </svg>
+                        </div>
+                        <h3 class="service-title">24/7 Qo'llab-quvvatlash</h3>
+                        <p class="service-description">Tunu kun mijozlarimizga yordam berishga tayyor jamoamiz.</p>
+                        <a href="#" class="service-link">
+                            Batafsil
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Section -->
+        <section id="news" class="news">
+            <div class="container">
+                <div class="news-header">
+                    <div>
+                        <div class="section-badge blue">
+                            <span>Yangiliklar</span>
+                        </div>
+                        <h2 class="section-title">So'nggi <span>yangiliklar</span></h2>
+                    </div>
+                    <a href="#" class="btn btn-outline-blue">
+                        Barcha yangiliklar
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="news-grid">
+                    <article class="news-card">
+                        <div class="news-image">
+                            <div class="news-image-placeholder">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                                    <line x1="16" y1="2" x2="16" y2="6" />
+                                    <line x1="8" y1="2" x2="8" y2="6" />
+                                    <line x1="3" y1="10" x2="21" y2="10" />
+                                </svg>
+                            </div>
+                            <span class="news-category">Yangilik</span>
+                        </div>
+                        <div class="news-content">
+                            <div class="news-meta">
+                                <span>
+                                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                                        <line x1="16" y1="2" x2="16" y2="6" />
+                                        <line x1="8" y1="2" x2="8" y2="6" />
+                                        <line x1="3" y1="10" x2="21" y2="10" />
+                                    </svg>
+                                    15-yanvar, 2024
+                                </span>
+                                <span>
+                                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                        <circle cx="12" cy="12" r="3" />
+                                    </svg>
+                                    3,420
+                                </span>
+                            </div>
+                            <h3 class="news-title">Termiz — Toshkent yo'nalishida yangi yuqori tezlikli poyezd yo'lga chiqdi</h3>
+                            <p class="news-excerpt">Yo'lovchilar endi Termizdan Toshkentgacha 8 soatda qulay shartlarda sayohat qilishlari mumkin.</p>
+                            <a href="#" class="news-link">
+                                Batafsil o'qish
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="news-card">
+                        <div class="news-image">
+                            <div class="news-image-placeholder">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                                    <line x1="16" y1="2" x2="16" y2="6" />
+                                    <line x1="8" y1="2" x2="8" y2="6" />
+                                    <line x1="3" y1="10" x2="21" y2="10" />
+                                </svg>
+                            </div>
+                            <span class="news-category">Loyiha</span>
+                        </div>
+                        <div class="news-content">
+                            <div class="news-meta">
+                                <span>
+                                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                                        <line x1="16" y1="2" x2="16" y2="6" />
+                                        <line x1="8" y1="2" x2="8" y2="6" />
+                                        <line x1="3" y1="10" x2="21" y2="10" />
+                                    </svg>
+                                    10-yanvar, 2024
+                                </span>
+                                <span>
+                                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                        <circle cx="12" cy="12" r="3" />
+                                    </svg>
+                                    2,890
+                                </span>
+                            </div>
+                            <h3 class="news-title">Temir yo'l infratuzilmasini modernizatsiya qilish loyihasi boshlandi</h3>
+                            <p class="news-excerpt">Termiz stansiyasida yangi zamonaviy platformalar va kutish zallari qurilishi boshlanmoqda.</p>
+                            <a href="#" class="news-link">
+                                Batafsil o'qish
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="news-card">
+                        <div class="news-image">
+                            <div class="news-image-placeholder">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                                    <line x1="16" y1="2" x2="16" y2="6" />
+                                    <line x1="8" y1="2" x2="8" y2="6" />
+                                    <line x1="3" y1="10" x2="21" y2="10" />
+                                </svg>
+                            </div>
+                            <span class="news-category">Tadbir</span>
+                        </div>
+                        <div class="news-content">
+                            <div class="news-meta">
+                                <span>
+                                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                                        <line x1="16" y1="2" x2="16" y2="6" />
+                                        <line x1="8" y1="2" x2="8" y2="6" />
+                                        <line x1="3" y1="10" x2="21" y2="10" />
+                                    </svg>
+                                    5-yanvar, 2024
+                                </span>
+                                <span>
+                                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                        <circle cx="12" cy="12" r="3" />
+                                    </svg>
+                                    1,560
+                                </span>
+                            </div>
+                            <h3 class="news-title">Xodimlar malakasini oshirish bo'yicha seminar o'tkazildi</h3>
+                            <p class="news-excerpt">100 dan ortiq xodim xavfsizlik va mijozlarga xizmat ko'rsatish bo'yicha treningdan o'tdi.</p>
+                            <a href="#" class="news-link">
+                                Batafsil o'qish
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Press Event Section -->
+        <section id="press_event" class="press_event_section">
+            <div class="container">
+                <div class="section_header press_event_header">
+                    <div class="section_badge press_badge">
+                        <span>Matbuot xizmati</span>
+                    </div>
+                    <h2 class="section_title press_title">Poyezdlar harakati xavfsizligi kuni</h2>
+                    <p class="section_subtitle press_subtitle">
+                        2026-yil 28-yanvar kuni “Termiz MTU” filiali matbuot xizmati “O‘zbekiston temir yo‘llari” AJ
+                        boshqaruv raisi buyrug‘i ijrosini ta’minlash doirasida Sariosiyo stansiyasida o‘tkazilgan texnik
+                        va amaliy mashg‘ulotni sahifamizga yorqin vizual kartalar bilan olib chiqadi.
+                    </p>
+                </div>
+
+                <div class="press_event_grid">
+                    <article class="press_event_card press_card">
+                        <div class="press_card_image" style="background-image: url('images/meeting-1.jpg');"></div>
+                        <div class="press_card_body">
+                            <h3 class="press_card_title">Ta’lim-sabr mashg‘uloti</h3>
+                            <p class="press_card_text">
+                                Sh.A.Qodirov boshchiligidagi ishchi guruh tizimda aniqlangan haydovchilik va texnologik
+                                xatolarni qayta ko‘rib chiqdi, xavfsizlik buzilishi holatlari haqida batafsil fikr almashdi.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="press_event_card press_card">
+                        <div class="press_card_image" style="background-image: url('images/meeting-2.jpg');"></div>
+                        <div class="press_card_body">
+                            <h3 class="press_card_title">Ichki tartib va texnologiya</h3>
+                            <p class="press_card_text">
+                                O.X.To‘rayev ish tashkiliy va texnologik jarayonlarni belgilangan tartibda bajarish,
+                                ichki intizomga qat’iy amal qilish zarurligini alohida ta’kidlab o‘tdi.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="press_event_card press_card">
+                        <div class="press_card_image" style="background-image: url('images/meeting-3.jpg');"></div>
+                        <div class="press_card_body">
+                            <h3 class="press_card_title">Yangiliklar sahifasi uchun</h3>
+                            <p class="press_card_text">
+                                Sariosiyo stansiyasida tashkil etilgan mashg‘ulot matbuot xizmati orqali “Termiz MTU”
+                                rasmiy yangiliklar sahifasiga yetkazilib, harakat xavfsizligini ta’minlashga yo‘naltirilgan
+                                chora-tadbirlar ommaga yetkazildi.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Latest Updates and Videos -->
+        <section id="latest_updates" class="latest_updates_section">
+            <div class="container">
+                <div class="section_header latest_updates_header">
+                    <div class="section_badge gold">
+                        <span>Songi yangiliklar</span>
+                    </div>
+                    <h2 class="section_title latest_updates_title">Telegram kanali yangiliklari va videolar</h2>
+                    <p class="section_subtitle latest_updates_subtitle">
+                        `t.me/TERMIZ_MTU` kanalidagi so‘nggi ma’lumotlar asosida mazmunli yangiliklar va amaliy mashg‘ulot
+                        videolari sahifaga joylandi. Telegramdagi xabarlar asosida yangi jarayonlar, hal qiluvchi
+                        nuqtalar va rasmiy bayonotlar bir joyda.
+                    </p>
+                </div>
+
+                <div class="latest_updates_grid">
+                    <article class="latest_news_card">
+                        <h3 class="latest_news_title">Sariosiyo stansiyasida mashg‘ulotlar davom etmoqda</h3>
+                        <p class="latest_news_text">
+                            Uzel xodimlari va ijtimoiy masalalar bo‘limi rahbarlari boshchiligida tashkiliy ishlar hamda
+                            xavfsizlik choralari muhokama qilindi. Telegram kanalimizda ushbu jarayonlar bo‘yicha
+                            rasmiy bayonotlar joylashtirildi.
+                        </p>
+                        <p class="latest_news_text">
+                            Mas’ul rahbarlar harakat xavfsizligini yaqqol ta’minlash, ichki intizom va texnologik jarayonlarga
+                            rioya qilish ustida to‘xtalib o‘tishdi.
+                        </p>
+                    </article>
+
+                    <article class="video_card">
+                        <video class="video_card_media" muted controls loop playsinline>
+                            <source src="images/Dayjest.mp4" type="video/mp4">
+                            Sahifangizdagi videoni qo‘llab-quvvatlovchi brauzer sizda yo‘q.
+                        </video>
+                        <div class="video_card_caption">
+                            <p class="video_card_title">Mashg‘ulot dayjest</p>
+                            <p class="video_card_text">Telegram kanalidagi qisqa videodan Sariosiyo stansiyasidagi jarayonlarga nazar.</p>
+                        </div>
+                    </article>
+
+                    <article class="video_card">
+                        <video class="video_card_media" muted controls loop playsinline>
+                            <source src="images/IMG_4571.MP4" type="video/mp4">
+                            Brauzer video ko‘rishni qo‘llab-quvvatlamaydi.
+                        </video>
+                        <div class="video_card_caption">
+                            <p class="video_card_title">Jarayonlar taqdimoti</p>
+                            <p class="video_card_text">Uzel xodimlarining ichki texnologiya va tartib intizomiga doir qo‘llanmasi.</p>
+                        </div>
+                    </article>
+
+                    <article class="video_card">
+                        <video class="video_card_media" muted controls loop playsinline>
+                            <source src="images/video_2026-01-29_09-53-49.mp4" type="video/mp4">
+                            Brauzer video ko‘rishni qo‘llab-quvvatlamaydi.
+                        </video>
+                        <div class="video_card_caption">
+                            <p class="video_card_title">Ta’lim mashg‘uloti</p>
+                            <p class="video_card_text">Sh.A.Qodirov va boshqa rahbarlar bilan bo‘lib o‘tgan amaliy mashg‘ulotdan ro‘yhat.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <div class="section-badge gold">
+                            <span>Aloqa</span>
+                        </div>
+                        <h2 class="section-title">Biz bilan <span>bog'laning</span></h2>
+                        <p class="section-description">
+                            Savollaringiz bormi? Biz sizga yordam berishdan mamnunmiz.
+                            Quyidagi usullardan birini tanlang yoki forma orqali murojaat qiling.
+                        </p>
+
+                        <div class="contact-items">
+                            <a href="tel:+998762251234" class="contact-item">
+                                <div class="contact-item-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4>Telefon</h4>
+                                    <p>+998 76 225 12 34</p>
+                                </div>
+                            </a>
+
+                            <a href="mailto:info@termizmtu.uz" class="contact-item">
+                                <div class="contact-item-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                        <polyline points="22,6 12,13 2,6" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4>Email</h4>
+                                    <p>info@termizmtu.uz</p>
+                                </div>
+                            </a>
+
+                            <div class="contact-item">
+                                <div class="contact-item-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                        <circle cx="12" cy="10" r="3" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4>Manzil</h4>
+                                    <p>Termiz sh., Temir yo'l ko'chasi, 1-uy</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="contact-item-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <polyline points="12 6 12 12 16 14" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4>Ish vaqti</h4>
+                                    <p>Dushanba - Juma: 9:00 - 18:00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-wrapper">
+                        <h3>Murojaat qoldiring</h3>
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">Ismingiz</label>
+                                    <input type="text" id="name" name="name" placeholder="Ismingizni kiriting" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Telefon</label>
+                                    <input type="tel" id="phone" name="phone" placeholder="+998 XX XXX XX XX" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" placeholder="email@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Xabar</label>
+                                <textarea id="message" name="message" rows="4" placeholder="Xabaringizni yozing..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-full">
+                                Yuborish
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="22" y1="2" x2="11" y2="13" />
+                                    <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <div class="logo-icon">
+                            <svg viewBox="0 0 40 40" fill="none">
+                                <rect width="40" height="40" rx="8" fill="currentColor" />
+                                <path d="M10 28h20M12 20h16M14 12h12" stroke="white" stroke-width="3" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <div class="logo-text">
+                            <span class="logo-title">Termiz MTU</span>
+                            <span class="logo-subtitle">Mintaqaviy temir yo'l uzeli</span>
+                        </div>
+                    </a>
+                    <p class="footer-description">
+                        O'zbekiston Respublikasi "O'zbekiston temir yo'llari" AJ tarkibidagi
+                        Termiz mintaqaviy temir yo'l uzeli.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Telegram">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="YouTube">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Tezkor havolalar</h4>
+                        <ul>
+                            <li><a href="#hero">Bosh sahifa</a></li>
+                            <li><a href="#about">Biz haqimizda</a></li>
+                            <li><a href="#services">Xizmatlar</a></li>
+                            <li><a href="#news">Yangiliklar</a></li>
+                            <li><a href="#contact">Aloqa</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Xizmatlar</h4>
+                        <ul>
+                            <li><a href="#">Yo'lovchi tashish</a></li>
+                            <li><a href="#">Yuk tashish</a></li>
+                            <li><a href="#">Online chipta</a></li>
+                            <li><a href="#">Guruh sayohati</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Aloqa</h4>
+                        <ul class="contact-list">
+                            <li>
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>
+                                Termiz sh., Temir yo'l ko'chasi
+                            </li>
+                            <li>
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                                </svg>
+                                +998 76 225 12 34
+                            </li>
+                            <li>
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                    <polyline points="22,6 12,13 2,6" />
+                                </svg>
+                                info@termizmtu.uz
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Termiz MTU. Barcha huquqlar himoyalangan.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Maxfiylik siyosati</a>
+                    <a href="#">Foydalanish shartlari</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="~/js/site.js"></script>
+    <script src="~/js/site.js"></script>
+                <div class="hero-overlay"></div>
+                <div class="container">
+                    <div class="hero-content">
+                        <div class="hero-badge">
+                            <span>Temir yo‘l tizimi</span>
+                        </div>
+                        <h1 class="hero-title">Yangi <span>Yo‘nalishlar</span></h1>
+                        <p class="hero-description">
+                            Zamonaviy temir yo‘l infratuzilmasi va kengayib borayotgan xizmatlar.
+                        </p>
+                    </div> </div>
+
+
+</body>
+</html>

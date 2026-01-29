@@ -1,3 +1,5 @@
 <Solution>
-  <Project Path="Tmtu.Mvc/Tmtu.Mvc.csproj" />
+  <Folder Name="/src/" />
+  <Project Path="Infrastructure/Infrastructure.csproj" Id="4b123d34-2d06-476f-a274-bcfad36852b8" />
+  <Project Path="Web.Api/Web.Api.csproj" Id="1bf899ea-6d59-4684-98da-f7bb529642d1" />
 </Solution>
