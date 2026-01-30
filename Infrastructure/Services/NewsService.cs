@@ -1,7 +1,5 @@
-﻿using Infrastructure.ApplicationDbContext;
-using Infrastructure.Entities;
+﻿using Infrastructure.Entities;
 using Infrastructure.Services.Interfaces;
-using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Services;
 
