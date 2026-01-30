@@ -5,7 +5,11 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
-
+builder.WebHost.ConfigureKestrel(options =>
+{
+    var port = Environment.GetEnvironmentVariable("PORT") ?? "80";
+    options.ListenAnyIP(int.Parse(port));
+});
 builder.Services.AddScoped<IFileService, FileService>();
 builder.Services.AddScoped<INewsService, NewsService>();
 
