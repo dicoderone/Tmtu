@@ -102,5 +102,40 @@ public class NewsService : INewsService
 
         await cmd.ExecuteNonQueryAsync();
     }
+
+    public async Task UpdateAsync(NewsUpdateRequest request)
+    {
+        using var conn = new NpgsqlConnection(_connectionString);
+        await conn.OpenAsync();
+
+        string? imagePath = null;
+        string? videoPath = null;
+
+        if (request.Image != null)
+            imagePath = await _fileService.SaveAsync(request.Image, "images");
+
+        if (request.Video != null)
+            videoPath = await _fileService.SaveAsync(request.Video, "videos");
+
+        var sql = @"
+        UPDATE app_news
+        SET Title = @title,
+            Content = @content,
+            ImagePath = COALESCE(@image, ImagePath),
+            VideoPath = COALESCE(@video, VideoPath)
+        WHERE Id = @id;
+    ";
+
+        using var cmd = new NpgsqlCommand(sql, conn);
+
+        cmd.Parameters.AddWithValue("id", request.Id);
+        cmd.Parameters.AddWithValue("title", request.Title);
+        cmd.Parameters.AddWithValue("content", request.Content);
+        cmd.Parameters.AddWithValue("image", (object?)imagePath ?? DBNull.Value);
+        cmd.Parameters.AddWithValue("video", (object?)videoPath ?? DBNull.Value);
+
+        await cmd.ExecuteNonQueryAsync();
+    }
+
 }
 

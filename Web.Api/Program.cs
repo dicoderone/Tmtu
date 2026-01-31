@@ -2,14 +2,21 @@ using Infrastructure.Services;
 using Infrastructure.Services.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("CorsPolicy", policy =>
+    {
+        policy
+            .WithOrigins("http://127.0.0.1:5500")
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
+
 
 builder.Services.AddControllers();
 
-builder.WebHost.ConfigureKestrel(options =>
-{
-    var port = Environment.GetEnvironmentVariable("PORT") ?? "80";
-    options.ListenAnyIP(int.Parse(port));
-});
+
 builder.Services.AddScoped<IFileService, FileService>();
 builder.Services.AddScoped<INewsService, NewsService>();
 
@@ -22,6 +29,11 @@ var app = builder.Build();
 app.UseStaticFiles();
 app.UseSwagger();
 app.UseSwaggerUI();
+app.UseHttpsRedirection();
+
+app.UseCors("CorsPolicy");
+
 app.UseAuthorization();
+
 app.MapControllers();
 app.Run();

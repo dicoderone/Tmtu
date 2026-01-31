@@ -15,4 +15,5 @@ public interface INewsService
     Task<List<NewsResponse>> GetAllAsync();
     Task<NewsResponse?> GetByIdAsync(long id);
     Task DeleteAsync(long id);
+    Task UpdateAsync(NewsUpdateRequest request);
 }
